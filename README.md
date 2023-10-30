@@ -1,6 +1,6 @@
 # Taipy and OpenTelemetry
 
-[![tests](https://github.com/gmarabout/taipy-app-basic-opentelemetry/actions/workflows/pylint.yml/badge.svg)](https://github.com/gmarabout/taipy-app-basic-opentelemetry/actions/workflows/tests.yml)
+[![tests](https://github.com/gmarabout/taipy-app-basic-opentelemetry/actions/workflows/pylint.yml/badge.svg)](https://github.com/gmarabout/taipy-app-basic-opentelemetry/actions/workflows/pylint.yml)
 
 ---
 
