@@ -1,5 +1,9 @@
 # Taipy and OpenTelemetry
 
+[![tests](https://github.com/gmarabout/taipy-app-basic-opentelemetry/actions/workflows/tests.yml/badge.svg)](https://github.com/gmarabout/taipy-app-basic-opentelemetry/actions/workflows/tests.yml)
+
+---
+
 This project shows how to monitor a simple Taipy app with OpenTelemetry.
 It uses:
 
