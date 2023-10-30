@@ -1,0 +1,4 @@
+taipy
+opentelemetry-distro
+opentelemetry-exporter-otlp
+psutil==5.9.5 # Importing this will also import opentelemetry-instrumentation-system-metrics when running opentelemetry-bootstrap

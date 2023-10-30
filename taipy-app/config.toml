@@ -1,0 +1,21 @@
+
+[DATA_NODE.input]
+storage_type = "pickle"
+scope = "SCENARIO:SCOPE"
+
+[DATA_NODE.output]
+storage_type = "pickle"
+scope = "SCENARIO:SCOPE"
+
+[TASK.double]
+inputs = ["input:SECTION"]
+outputs = ["output:SECTION"]
+
+function = "main.double:function"
+skippable = "False:bool"
+
+[PIPELINE.pipeline]
+tasks = ["double:SECTION"]
+
+[SCENARIO.my_scenario]
+pipelines = ["pipeline:SECTION"]
