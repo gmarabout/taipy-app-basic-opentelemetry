@@ -41,6 +41,7 @@ tracer = trace.get_tracer("my.tracer.name")
 
 
 def init_metrics() -> dict:
+    """Initializes metrics"""
     scenario_execution_counter = meter.create_counter(
         "scenario_execution",
         unit="counts",

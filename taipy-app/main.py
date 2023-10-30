@@ -1,7 +1,7 @@
-from taipy import Config, Status
-import taipy as tp
 import time
 from pathlib import Path
+from taipy import Config, Status
+import taipy as tp
 from taipy.gui import get_state_id, invoke_callback
 
 from metrics import init_metrics, tracer
@@ -13,23 +13,24 @@ rec_svc_metrics = init_metrics()
 
 @tracer.start_as_current_span("function_double")
 def double(nb):
+    """Double the given number."""
     time.sleep(1)
     return int(nb) * 2
 
 
 Config.load(Path(__file__).parent / "config.toml")
-scenario = Config.scenarios["my_scenario"]
+SCENARIO = Config.scenarios["my_scenario"]  # pylint: disable=no-member
 
 
-value = 21
-result = double(value)
+value = 21  # pylint: disable=invalid-name
+result = double(value)  # pylint: disable=invalid-name
 
-content = """
+CONTENT = """
 * You can double this number: <|{value}|input|propagate=True|>
 * by clicking on this button: <|Double it!|button|on_action=on_button_click|>
 * and here is the result: <|{result}|>
 """
-gui = tp.Gui(page=content)
+gui = tp.Gui(page=CONTENT)
 core = tp.Core()
 
 
@@ -50,8 +51,9 @@ def job_updated(state_id, scenario, job):
 
 
 def on_button_click(state):
+    """callback for button clicked"""
     state_id = get_state_id(state)
-    my_scenario = tp.create_scenario(scenario)
+    my_scenario = tp.create_scenario(SCENARIO)
     my_scenario.input.write(state.value)
     tp.subscribe_scenario(scenario=my_scenario, callback=job_updated, params=[state_id])
     tp.submit(my_scenario)
